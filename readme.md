@@ -1,1 +1,1 @@
-# Code for "Multi-View Cross-Modal Distillation for Enhanced Nasopharyngeal Carcinoma Diagnosis"
+# Enhancing Nasopharyngeal Carcinoma Classification Based on Multi-View Cross-Modal Knowledge Distillation"
