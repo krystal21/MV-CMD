@@ -1,0 +1,58 @@
+model:
+  backbone: resnet50
+  dataset: NPC
+  exp: exp
+  save_dir: kd/hint
+  num_classes: 2
+  linear: True
+training:
+  batch_size: 32
+  epochs: 100
+  num_workers: 16 
+  t: 0.07
+  seed: 26
+  gpu_id: '0'
+  save_freq: 500
+optimizer:
+  name: Adam
+  lr: 1.0e-4
+  momentum: 0.9
+  weight_decay: 5.0e-4
+scheduler:
+  name: CosineAnnealingLR
+  T_max: 100
+  eta_min: 1.0e-5
+kd:
+  viewcon: True
+  distill: hint_fusion
+  kd_T: 1
+  coefficient: 
+   - 1 
+   - 0
+   - 1
+linear_ckpt:
+  - exp_final/raw1/b16-2023-11-17 10-18/pth/0best13.pth
+  - exp_final/raw1/b16-2023-11-17 10-18/pth/1best4.pth
+  - exp_final/raw1/b16-2023-11-17 10-18/pth/2best7.pth
+  - exp_final/raw1/b16-2023-11-17 10-18/pth/3best8.pth
+  - exp_final/raw1/b16-2023-11-17 10-18/pth/4best5.pth
+
+ckpt: 
+
+  - exp_final/viewcon1/b16-2023-11-09 07-33/pth/0epoch85.pth
+  - exp_final/viewcon1/b16-2023-11-09 07-33/pth/1epoch75.pth
+  - exp_final/viewcon1/b16-2023-11-09 07-33/pth/2epoch95.pth
+  - exp_final/viewcon1/b16-2023-11-09 07-33/pth/3epoch80.pth
+  - exp_final/viewcon1/b16-2023-11-09 07-33/pth/4epoch50.pth
+
+  # - exp_final/raw/nbi9-2023-11-05 04-23/pth/0epoch46.pth
+  # - exp_final/raw/nbi9-2023-11-05 04-23/pth/1best35.pth
+  # - exp_final/raw/nbi9-2023-11-05 04-23/pth/2best38.pth
+  # - exp_final/raw/nbi9-2023-11-05 04-23/pth/3epoch34.pth
+  # - exp_final/raw/nbi9-2023-11-05 04-23/pth/4best58.pth
+path:
+  NPC:
+    csv_path: data/NPC/
+    img_path: /home/data/NBIWL/
+
+   
