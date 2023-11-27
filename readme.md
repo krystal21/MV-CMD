@@ -1,5 +1,4 @@
 # Code for paper "Enhancing Nasopharyngeal Carcinoma Classification Based on Multi-View Cross-Modal Knowledge Distillation"
-# Code for paper "Enhancing Nasopharyngeal Carcinoma Classification Based on Multi-View Cross-Modal Knowledge Distillation"
 
 Our paper implements a multi-view, cross-modal distillation algorithm. The algorithm implementation comprises two phases, involving pre-training of the teacher model (utilizing multi-view contrastive learning) and multi-view weighted distillation. 
 
